@@ -362,7 +362,7 @@ Looking at the scatterplot matrix generated from a subset of data, only alcohol 
 
 Other than that, there is also a moderate negative correlation betweeen residual sugar and alcohol level.
 
-However, it is good to take a closer look at the individual scatterplots to get a better understanding of the relationships.
+To get a better understanding of the relationships, I will take a closer look at the individual plots.
 
 ### Quality and Alcohol
 

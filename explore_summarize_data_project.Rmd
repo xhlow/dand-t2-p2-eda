@@ -466,7 +466,7 @@ s2 <- subset(df, df$free.sulfur.dioxide.bucket == "<=50")
 summary(s2$quality)
 ```
 
-It appears that both groups have the five number summary (minimum, first quartile, median, third quartile, maximum) in terms of quality ratings. The median and third quartile also have the same values in both groups. As a result, the lines that represent median and third quartile overlap each other and thus the median line cannot be seen.
+It appears that both groups have the same five number summary (minimum, first quartile, median, third quartile, maximum) in terms of quality ratings. The median and third quartile also have the same values in both groups. As a result, the lines that represent median and third quartile overlap each other and thus the median line cannot be seen.
 
 ### Residual Sugar and Alcohol
 

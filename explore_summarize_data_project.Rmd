@@ -608,12 +608,11 @@ At the same quality rating, wines with greater than 50 mg/dm^3^ free sulfur diox
 
 # Reflection
 
-> **Tip**: Here's the final step! Reflect on the exploration you performed and
-the insights you found. What were some of the struggles that you went through?
-What went well? What was surprising? Make sure you include an insight into
-future work that could be done with the dataset.
+The white wine dataset contains information of 4898 Portuguese "Vinho Verde" white wines, along with 11 variables about their chemical properties and 1 variable about their quality ratings. After understanding the variables of the dataset, I explored whether any variables are correlated to the wines' quality ratings.
 
-Challenge: finding meaningful relationships between quality and other variables. It seems that no variable is strongly linked to wine quality.
+A major challenge in this exploratory data analysis is finding meaningful relationships between quality and other variables. It seems that no variable is strongly linked to wine quality, even though online resources claimed that some of them contribute to the smell and taste of wines. Only alcohol level is moderately correlated to quality.
+
+One limitation of this dataset lies in the quality ratings. The minimum number of wine experts that evaluated the quality of each wine was 3, which I think is quite low. More experts  should be involved in order to obtain a more objective quality rating. Also, through online research, I found that tannin also affects wine taste, but its concentration is not included in this dataset. In the future, tannin concentrations in wines should be measured so that their relationship with wine quality ratings could be explored.
 
 # Reference
 

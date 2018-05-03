@@ -616,6 +616,12 @@ A major challenge in this exploratory data analysis is finding meaningful relati
 
 One limitation of this dataset lies in the quality ratings. The minimum number of wine experts that evaluated the quality of each wine was 3, which I think is quite low. More experts  should be involved in order to obtain a more objective quality rating. Also, through online research, I found that tannin also affects wine taste, but its concentration is not included in this dataset. In the future, tannin concentrations in wines should be measured so that their relationship with wine quality ratings could be explored.
 
+# Dataset Source
+
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
+
+Available at: http://dx.doi.org/10.1016/j.dss.2009.05.016
+
 # Reference
 
 Renaming legend titles and labels: 

@@ -548,10 +548,7 @@ Regardless of whether free sulfur dioxide is greater than 50 mg/dm^3^ or not, wi
 
 ### Were there any interesting or surprising interactions between features?
 
-There is no strong correlation between quality ratings and any variable.
-
-### OPTIONAL: Did you create any models with your dataset? Discuss the strengths and limitations of your model.
-No
+Surprisingly, there is no strong correlation between quality ratings and any variable.
 
 ------
 

@@ -84,6 +84,8 @@ ggplot(aes(x = fixed.acidity), data = df) +
 
 Fixed acitity data is normally ditributed. Most wines have a fixed acidity level between 6 to 7.5 g/dm^3^. There are also some high outliers.
 
+I discovered from online resources that acids affect the mouth feel of wines, so I am curious whether fixed acidity, which measures the concentration of tartaric acid in wines, is linked to wine quality.
+
 ## Volatile Acidity
 
 Summary of volatile acidity data:
@@ -103,7 +105,7 @@ ggplot(aes(x = volatile.acidity), data = df) +
   scale_x_continuous(limits = c(0, 0.7), breaks = seq(0, 0.7, 0.1))
 ```
 
-Volatile acidity data is slightly right-skewed. Most wines have a volatile acidity between 0.15 to 0.35 g/dm^3^ and there are some high outliers. As high volatile acidity can give wines an unpleasant, vinegar taste, I wonder if volatile acidity is negatively correlated to quality.
+Volatile acidity data, which is the measure of acetic acid concentration, is slightly right-skewed. Most wines have a volatile acidity between 0.15 to 0.35 g/dm^3^ and there are some high outliers. According to the documentation in `wineQualityInfo.txt`, high volatile acidity can give wines an unpleasant, vinegar taste, so I wonder if volatile acidity is negatively correlated to quality.
 
 ### Citric Acid
 
@@ -126,7 +128,7 @@ ggplot(aes(x = citric.acid), data = df) +
 
 Citric acid levels are quite normally distributed and most wines have citric acid level between 0.20 to 0.40 g/dm^3^. However, there are also many wines with 0.49 g/dm^3^ citric acid. In addition, there are some high outliers.
 
-Citric acid can add freshness and flavor to wines, so I wonder if citric acid levels affect the quality ratings.
+According to the documentation in `wineQualityInfo.txt`, citric acid can add freshness and flavor to wines, so I wonder if citric acid levels affect the quality ratings.
 
 ### Residual Sugar
 
@@ -204,7 +206,7 @@ The free sulfur dioxide data is slightly right-skewed. Most wines have free sulf
 
 ### Free Sulfur Dioxide Bucket
 
-According to the documentation, if free sulfur dioxide in wine is higher than 50 ppm, it gives an obvious smell and taste in the wine. So, I wonder if wines with free sulfur dioxide levels higher than 50 mg/dm^3^ have a different rating from those below (assuming 1 mg/dm^3^ is approximately 1ppm). To investigate this, I created a column called free.sulfur.dioxide.bucket where wines with free sulfur dioxide levels higher than 50 mg/dm^3^ will be assigned the value ">50" and those lower than or equal to 50 mg/dm^3^ will be assigned the value "<=50".
+According to the documentation `wineQualityInfo.txt`, if free sulfur dioxide in wine is higher than 50 ppm, it gives an obvious smell and taste in the wine. So, I wonder if wines with free sulfur dioxide levels higher than 50 mg/dm^3^ have a different rating from those below (assuming 1 mg/dm^3^ is approximately 1ppm). To investigate this, I created a column called free.sulfur.dioxide.bucket where wines with free sulfur dioxide levels higher than 50 mg/dm^3^ will be assigned the value ">50" and those lower than or equal to 50 mg/dm^3^ will be assigned the value "<=50".
 
 ```{r}
 df$free.sulfur.dioxide.bucket <- ifelse(df$free.sulfur.dioxide > 50,

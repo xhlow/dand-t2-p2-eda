@@ -593,7 +593,7 @@ ggplot(aes(x = quality, y = alcohol, color = free.sulfur.dioxide.bucket),
   geom_line(stat = "summary", fun.y = median) +
   geom_point(stat = "summary", fun.y = median) +
   scale_x_continuous(breaks = seq(3, 9, 1)) +
-  ggtitle("Alcohol by Quality") +
+  ggtitle("Alcohol level by quality") +
   ylab("alcohol level (%)") +
   scale_color_discrete(name = "Free sulfur dioxide",
                        breaks = c("<=50", ">50"),

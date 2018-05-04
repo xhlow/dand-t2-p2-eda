@@ -465,9 +465,8 @@ It appears that both groups have the same five number summary (minimum, first qu
 ### Residual Sugar and Alcohol
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-# maybe don't use this?
 ggplot(aes(x = residual.sugar, y = alcohol), data = df) +
-  geom_point(alpha = 0.5) +
+  geom_point(alpha = 0.2) +
   scale_x_log10(limits = c(0.6, 20)) +
   xlab('residual.sugar (log 10)')
 ```
@@ -480,7 +479,7 @@ cor(log10(df$residual.sugar), df$alcohol)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(aes(x = residual.sugar, y = alcohol), data = df) +
-  geom_point(alpha = 0.5) +
+  geom_point(alpha = 0.2) +
   scale_x_continuous(limits = c(0.6, 20))
 ```
 

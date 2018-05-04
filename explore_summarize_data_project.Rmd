@@ -567,12 +567,13 @@ Residual sugar level seems to be negatively correlated with alcohol level, but t
 so2 <- c(`<=50` = "<=50 mg/dm3 free sulfur dioxide",
          `>50` = ">50 mg/dm3 free sulfur dioxide")
 
-ggplot(aes(x = alcohol, y = quality), data = df) +
-  geom_point(alpha = 0.2) +
+ggplot(aes(x = factor(quality), y = alcohol), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
   facet_wrap(~ free.sulfur.dioxide.bucket,
              labeller = labeller(free.sulfur.dioxide.bucket = so2)) +
   ggtitle("Quality against alcohol level, facet wrap by free sulfur dioxide bucket") +
-  xlab("alcohol level(%)")
+  ylab("alcohol level(%)") +
+  xlab("quality")
 ```
 
 ### Description Two

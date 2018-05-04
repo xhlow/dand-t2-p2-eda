@@ -48,17 +48,8 @@ str(df)
 ### Quality
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = quality), data = df) +
-  geom_histogram() +
-  scale_x_continuous(breaks = seq(3, 9, 1))
-```
-
-From the histogram, we can see that quality ratings are discrete integers. So a bar chart is a better representation of the data.
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = quality), data = df) +
-  geom_bar() +
-  scale_x_continuous(breaks = seq(3, 9, 1))
+ggplot(aes(x = factor(quality)), data = df) +
+  geom_bar()
 ```
 
 Most wines have a quality rating between 5 to 7 and the most common rating is 6.

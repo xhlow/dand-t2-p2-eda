@@ -342,20 +342,17 @@ The residual sugar data has a very long tail, so I log-transformed the data. Aft
 
 # Bivariate Plots Section
 
-### Scatterplot matrix
+### Correlation matrix
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-# subset the data because we don't need the id (X) in the scatterplot matrix
-# df_subset <- df[, c(2:13)]
-
-ggpairs(df[sample.int(nrow(df), 1000), ])
+ggcorr(df, size = 2)
 ```
 
-Looking at the scatterplot matrix generated from a subset of data, only alcohol level is moderately correlated to quality. Residual sugar, fixed acidity, volatile acidity, citric acid, and pH have weak correlations with quality.
+Looking at the correlation matrix generated from a subset of data, only alcohol level is moderately correlated to quality. Residual sugar, fixed acidity, volatile acidity, citric acid, and pH have weak correlations with quality.
 
 Other than that, there is also a moderate negative correlation betweeen residual sugar and alcohol level.
 
-To get a better understanding of the relationships, I will take a closer look at the individual plots.
+To get a better understanding of the relationships, I will take a closer look at individual bivariate plots.
 
 ### Quality and Alcohol
 

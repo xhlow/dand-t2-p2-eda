@@ -360,8 +360,8 @@ To get a better understanding of the relationships, I will take a closer look at
 ### Quality and Alcohol
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = alcohol, y = quality), data = df) +
-  geom_point(alpha = 0.2)
+ggplot(aes(x = factor(quality), y = alcohol), data = df) +
+  geom_jitter(alpha = 0.2)
 ```
 
 Pearson correlation coefficient:

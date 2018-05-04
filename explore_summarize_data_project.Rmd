@@ -430,8 +430,8 @@ It seems that fixed acidity, volatile acidity, and citric acid level are not rea
 ### Quality and pH
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = pH, y = quality), data = df) +
-  geom_point(alpha = 0.1)
+ggplot(aes(x = factor(quality), y = pH), data = df) +
+  geom_jitter(alpha = 0.2, size = 1)
 ```
 
 Again, there appears to be not much correlation between pH and quality.

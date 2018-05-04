@@ -387,9 +387,9 @@ It seems that wines with quality ratings greater than 6 tend to have higher alco
 ### Quality and Residual Sugar
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = residual.sugar, y = quality), data = df) +
-  geom_point(alpha = 0.2) +
-  scale_x_continuous(limits = c(0, 25))
+ggplot(aes(x = factor(quality), y = residual.sugar), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
+  scale_y_continuous(limits = c(0, 25))
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}

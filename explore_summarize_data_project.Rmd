@@ -420,9 +420,9 @@ ggplot(aes(x = factor(quality), y = volatile.acidity), data = df) +
 ### Quality and Citric Acid Level
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = citric.acid, y = quality), data = df) +
-  geom_point(alpha = 0.1) +
-  scale_x_continuous(limits = c(0, 0.9), breaks = seq(0, 0.9, 0.1))
+ggplot(aes(x = factor(quality), y = citric.acid), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
+  scale_y_continuous(limits = c(0, 0.9), breaks = seq(0, 0.9, 0.1))
 ```
 
 It seems that fixed acidity, volatile acidity, and citric acid level are not really correlated with quality.

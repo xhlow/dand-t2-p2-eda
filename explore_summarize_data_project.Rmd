@@ -508,14 +508,14 @@ Alcohol level has the strongest correlation with quality. However, they are only
 # Multivariate Plots Section
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = alcohol, y = quality), data = df) +
-  geom_point(aes(color = free.sulfur.dioxide.bucket), 
-             alpha = 0.5, size = 2)
+ggplot(aes(x = factor(quality), y = alcohol), data = df) +
+  geom_jitter(aes(color = free.sulfur.dioxide.bucket), 
+             alpha = 0.5, size = 1)
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = alcohol, y = quality), data = df) +
-  geom_point(alpha = 0.2) +
+ggplot(aes(x = factor(quality), y = alcohol), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
   facet_wrap(~ free.sulfur.dioxide.bucket) +
   ggtitle("facet wrap by free.sulfur.dioxide.bucket")
 ```

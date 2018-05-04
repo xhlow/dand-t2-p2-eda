@@ -412,9 +412,9 @@ ggplot(aes(x = factor(quality), y = fixed.acidity), data = df) +
 ### Quality and Volatile Acidity
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = volatile.acidity, y = quality), data = df) +
-  geom_point(alpha = 0.2) +
-  scale_x_continuous(limits = c(0, 0.8), breaks = seq(0, 0.8, 0.1))
+ggplot(aes(x = factor(quality), y = volatile.acidity), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
+  scale_y_continuous(limits = c(0, 0.8), breaks = seq(0, 0.8, 0.1))
 ```
 
 ### Quality and Citric Acid Level

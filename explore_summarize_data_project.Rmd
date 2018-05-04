@@ -393,9 +393,10 @@ ggplot(aes(x = factor(quality), y = residual.sugar), data = df) +
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = residual.sugar, y = quality), data = df) +
-  geom_point(alpha = 0.1) +
-  scale_x_log10()
+ggplot(aes(x = factor(quality), y = residual.sugar), data = df) +
+  geom_jitter(alpha = 0.2) +
+  scale_y_log10(breaks = c(1, 10, 20, 30)) +
+  ylab("residual.sugar (log10)")
 ```
 
 It seems that residual sugar is not really correlated to quality. The quality ratings are varied regardless of residual sugar level.

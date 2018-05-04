@@ -404,9 +404,9 @@ It seems that residual sugar is not really correlated to quality. The quality ra
 ### Quality and Fixed Acidity
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-ggplot(aes(x = fixed.acidity, y = quality), data = df) +
-  geom_point(alpha = 0.2) +
-  scale_x_continuous(limits = c(3.5, 11), breaks = seq(4, 11, 1))
+ggplot(aes(x = factor(quality), y = fixed.acidity), data = df) +
+  geom_jitter(alpha = 0.2, size = 1) +
+  scale_y_continuous(limits = c(3.5, 11), breaks = seq(4, 11, 1))
 ```
 
 ### Quality and Volatile Acidity

@@ -39,3 +39,19 @@ P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine
 preferences by data mining from physicochemical properties. In Decision Support
 Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236. Available at:
 http://dx.doi.org/10.1016/j.dss.2009.05.016
+
+## Resources Referred to Complete the Project
+
+Renaming legend titles and labels:
+
+* http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/
+
+Renaming facet labels:
+
+* http://www.cookbook-r.com/Graphs/Facets_(ggplot2)/#modifying-facet-label-text
+
+Factors that affect the smell or taste of wines:
+
+* https://www.sciencehistory.org/distillations/magazine/scientia-vitis-decanting-the-chemistry-of-wine-flavor
+
+* https://vinepair.com/articles/chemical-compounds-wine-taste-smell/

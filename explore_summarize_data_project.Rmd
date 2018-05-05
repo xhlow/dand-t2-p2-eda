@@ -394,11 +394,15 @@ After doing so, the data appears bimodal.
 ggcorr(df, size = 2)
 ```
 
-Looking at the correlation matrix generated from a subset of data, only alcohol level is moderately correlated to quality. Residual sugar, fixed acidity, volatile acidity, citric acid, and pH have weak correlations with quality.
+Looking at the correlation matrix generated from a subset of data, only alcohol 
+level is moderately correlated to quality. Residual sugar, fixed acidity, 
+volatile acidity, citric acid, and pH have weak correlations with quality.
 
-Other than that, there is also a moderate negative correlation betweeen residual sugar and alcohol level.
+Other than that, there is also a moderate negative correlation betweeen 
+residual sugar and alcohol level.
 
-To get a better understanding of the relationships, I will take a closer look at individual bivariate plots.
+To get a better understanding of the relationships, I will take a closer look 
+at individual bivariate plots.
 
 ### Quality and Alcohol
 
@@ -413,9 +417,11 @@ Pearson correlation coefficient:
 cor(df$alcohol, df$quality)
 ```
 
-There is a moderate positive correlation between alcohol level and quality. Wines with higher alcohol levels tend to have higher quality ratings.
+There is a moderate positive correlation between alcohol level and quality. 
+Wines with higher alcohol levels tend to have higher quality ratings.
 
-Next, I take a look at the median alcohol level for wines at each quality rating.
+Next, I take a look at the median alcohol level for wines at each quality 
+rating.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(aes(x = quality, y = alcohol), data = df) +
@@ -425,7 +431,9 @@ ggplot(aes(x = quality, y = alcohol), data = df) +
   ylab("median alcohol level")
 ```
 
-It seems that wines with quality ratings greater than 6 tend to have higher alcohol contents, while those with ratings 6 and below varied in alcohol contents.
+It seems that wines with quality ratings greater than 6 tend to have higher 
+alcohol contents, while those with ratings 6 and below varied in alcohol 
+contents.
 
 ### Quality and Residual Sugar
 
@@ -442,7 +450,8 @@ ggplot(aes(x = factor(quality), y = residual.sugar), data = df) +
   ylab("residual.sugar (log10)")
 ```
 
-It seems that residual sugar is not really correlated to quality. The quality ratings are varied regardless of residual sugar level.
+It seems that residual sugar is not really correlated to quality. The quality 
+ratings are varied regardless of residual sugar level.
 
 ### Quality and Fixed Acidity
 
@@ -468,7 +477,8 @@ ggplot(aes(x = factor(quality), y = citric.acid), data = df) +
   scale_y_continuous(limits = c(0, 0.9), breaks = seq(0, 0.9, 0.1))
 ```
 
-It seems that fixed acidity, volatile acidity, and citric acid level are not really correlated with quality.
+It seems that fixed acidity, volatile acidity, and citric acid level are not 
+really correlated with quality.
 
 ### Quality and pH
 
@@ -487,23 +497,31 @@ ggplot(aes(x = free.sulfur.dioxide.bucket, y = quality), data = df) +
   stat_summary(fun.y = mean, geom = "point", shape = 4, size = 4)
 ```
 
-At first glance, the box plots seem unusual. It seems that there is no median and the quality ratings for wines in both groups have the same first and third quartile. So, I check the summary of quality ratings in both groups.
+At first glance, the box plots seem unusual. It seems that there is no median 
+and the quality ratings for wines in both groups have the same first and third 
+quartile. So, I check the summary of quality ratings in both groups.
 
-Summary of quality ratings of wine with more than 50 mg/dm^3^ free sulfur dioxide:
+Summary of quality ratings of wine with more than 50 mg/dm^3^ free sulfur 
+dioxide:
 
 ```{r echo=FALSE}
 s1 <- subset(df, df$free.sulfur.dioxide.bucket == ">50")
 summary(s1$quality)
 ```
 
-Summary of quality ratings of wine with less than or equal to 50 mg/dm^3^ free sulfur dioxide:
+Summary of quality ratings of wine with less than or equal to 50 mg/dm^3^ free 
+sulfur dioxide:
 
 ```{r echo=FALSE}
 s2 <- subset(df, df$free.sulfur.dioxide.bucket == "<=50")
 summary(s2$quality)
 ```
 
-It appears that both groups have the same five number summary (minimum, first quartile, median, third quartile, maximum) in terms of quality ratings. The median and third quartile also have the same values in both groups. As a result, the lines that represent median and third quartile overlap each other and thus the median line cannot be seen.
+It appears that both groups have the same five number summary (minimum, first 
+quartile, median, third quartile, maximum) in terms of quality ratings. The 
+median and third quartile also have the same values in both groups. As a 
+result, the lines that represent median and third quartile overlap each other 
+and thus the median line cannot be seen.
 
 ### Residual Sugar and Alcohol
 
@@ -532,21 +550,34 @@ Pearson correlation coefficient (when not log transformed):
 cor(df$residual.sugar, df$alcohol)
 ```
 
-It seems that there is some negative correlation between residual sugar and alcohol. Wines with higher residual sugar levels tend to have lower alcohol levels. The correlation is stronger when residual sugar data is not log transformed.
+It seems that there is some negative correlation between residual sugar and 
+alcohol. Wines with higher residual sugar levels tend to have lower alcohol 
+levels. The correlation is stronger when residual sugar data is not log 
+transformed.
 
 # Bivariate Analysis
 
-### Talk about some of the relationships you observed in this part of the investigation. How did the feature(s) of interest vary with other features in the dataset?
+### Talk about some of the relationships you observed in this part of the \
+investigation. How did the feature(s) of interest vary with other features in 
+the dataset?
 
-Among the variables investigated, only alcohol level seem to be somewhat correlated to quality. There is a moderate positive correlation between alcohol level and quality. Other than that, residual sugar, fixed acidity, volatile acidity, citric acid, pH, and free sulfur dioxide do not seem to be correlated to quality.
+Among the variables investigated, only alcohol level seem to be somewhat 
+correlated to quality. There is a moderate positive correlation between alcohol 
+level and quality. Other than that, residual sugar, fixed acidity, volatile 
+acidity, citric acid, pH, and free sulfur dioxide do not seem to be correlated 
+to quality.
 
-### Did you observe any interesting relationships between the other features (not the main feature(s) of interest)?
+### Did you observe any interesting relationships between the other features \
+(not the main feature(s) of interest)?
 
-There is a moderate negative correlation between residual sugar level and alcohol level. Wines with higher residual sugar levels tend to have lower alcohol levels.
+There is a moderate negative correlation between residual sugar level and 
+alcohol level. Wines with higher residual sugar levels tend to have lower 
+alcohol levels.
 
 ### What was the strongest relationship you found?
 
-Alcohol level has the strongest correlation with quality. However, they are only moderately correlated.
+Alcohol level has the strongest correlation with quality. However, they are 
+only moderately correlated.
 
 # Multivariate Plots Section
 
@@ -563,7 +594,8 @@ ggplot(aes(x = factor(quality), y = alcohol), data = df) +
   ggtitle("facet wrap by free.sulfur.dioxide.bucket")
 ```
 
-It seems that the trend is similar in both groups. Wines with higher alcohol levels tend to have higher quality ratings.
+It seems that the trend is similar in both groups. Wines with higher alcohol 
+levels tend to have higher quality ratings.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(aes(x = quality, y = alcohol, color = free.sulfur.dioxide.bucket),
@@ -574,17 +606,23 @@ ggplot(aes(x = quality, y = alcohol, color = free.sulfur.dioxide.bucket),
   ylab("median alcohol level")
 ```
 
-At the same quality rating, wines with greater than 50 mg/dm^3^ free sulfur dioxide tend to have lower alcohol levels. However, in both groups, wines with higher quality ratings still tend to have higher alcohol levels.
+At the same quality rating, wines with greater than 50 mg/dm^3^ free sulfur 
+dioxide tend to have lower alcohol levels. However, in both groups, wines with 
+higher quality ratings still tend to have higher alcohol levels.
 
 # Multivariate Analysis
 
-### Talk about some of the relationships you observed in this part of the investigation. Were there features that strengthened each other in terms of looking at your feature(s) of interest?
+### Talk about some of the relationships you observed in this part of the \
+investigation. Were there features that strengthened each other in terms of \
+looking at your feature(s) of interest?
 
-Regardless of whether free sulfur dioxide is greater than 50 mg/dm^3^ or not, wines with higher quality ratings still tend to have higher alcohol levels.
+Regardless of whether free sulfur dioxide is greater than 50 mg/dm^3^ or not, 
+wines with higher quality ratings still tend to have higher alcohol levels.
 
 ### Were there any interesting or surprising interactions between features?
 
-Surprisingly, there is no strong correlation between quality ratings and any variable.
+Surprisingly, there is no strong correlation between quality ratings and any 
+variable.
 
 ------
 
@@ -603,7 +641,9 @@ ggplot(aes(x = residual.sugar, y = alcohol), data = df) +
 
 ### Description One
 
-Residual sugar level seems to be negatively correlated with alcohol level, but the correlation is only moderate. Wines with higher residual sugar levels tend to have lower alcohol levels.
+Residual sugar level seems to be negatively correlated with alcohol level, but 
+the correlation is only moderate. Wines with higher residual sugar levels tend 
+to have lower alcohol levels.
 
 ### Plot Two
 ```{r echo=FALSE, Plot_Two}
@@ -621,7 +661,10 @@ ggplot(aes(x = factor(quality), y = alcohol), data = df) +
 
 ### Description Two
 
-Wines with higher alcohol levels tend to have higher quality ratings. This suggests that there is some correlation between alcohol level and quality. This is the same for wines with free sulfur dioxide level greater than 50 mg/dm^3^ and those not greater than 50 mg/dm^3^.
+Wines with higher alcohol levels tend to have higher quality ratings. This 
+suggests that there is some correlation between alcohol level and quality. This 
+is the same for wines with free sulfur dioxide level greater than 50 mg/dm^3^ 
+and those not greater than 50 mg/dm^3^.
 
 ### Plot Three
 ```{r echo=FALSE, Plot_Three}
@@ -639,21 +682,40 @@ ggplot(aes(x = quality, y = alcohol, color = free.sulfur.dioxide.bucket),
 
 ### Description Three
 
-At the same quality rating, wines with greater than 50 mg/dm^3^ free sulfur dioxide tend to have lower alcohol levels. However, in both groups, wines with higher quality ratings still tend to have higher alcohol levels. This further supports the correlation between alcohol levels and quality ratings.
+At the same quality rating, wines with greater than 50 mg/dm^3^ free sulfur 
+dioxide tend to have lower alcohol levels. However, in both groups, wines with 
+higher quality ratings still tend to have higher alcohol levels. This further 
+supports the correlation between alcohol levels and quality ratings.
 
 ------
 
 # Reflection
 
-The white wine dataset contains information of 4898 Portuguese "Vinho Verde" white wines, along with 11 variables about their chemical properties and 1 variable about their quality ratings. After understanding the variables of the dataset, I explored whether any variables are correlated to the wines' quality ratings.
+The white wine dataset contains information of 4898 Portuguese "Vinho Verde" 
+white wines, along with 11 variables about their chemical properties and 1 
+variable about their quality ratings. After understanding the variables of the 
+dataset, I explored whether any variables are correlated to the wines' quality 
+ratings.
 
-A major challenge in this exploratory data analysis is finding meaningful relationships between quality and other variables. It seems that no variable is strongly linked to wine quality, even though online resources claimed that some of them contribute to the smell and taste of wines. Only alcohol level is moderately correlated to quality.
+A major challenge in this exploratory data analysis is finding meaningful 
+relationships between quality and other variables. It seems that no variable is 
+strongly linked to wine quality, even though online resources claimed that some 
+of them contribute to the smell and taste of wines. Only alcohol level is 
+moderately correlated to quality.
 
-One limitation of this dataset lies in the quality ratings. The minimum number of wine experts that evaluated the quality of each wine was 3, which I think is quite low. More experts  should be involved in order to obtain a more objective quality rating. Also, through online research, I found that tannin also affects wine taste, but its concentration is not included in this dataset. In the future, tannin concentrations in wines should be measured so that their relationship with wine quality ratings could be explored.
+One limitation of this dataset lies in the quality ratings. The minimum number 
+of wine experts that evaluated the quality of each wine was 3, which I think is 
+quite low. More experts  should be involved in order to obtain a more objective 
+quality rating. Also, through online research, I found that tannin also affects 
+wine taste, but its concentration is not included in this dataset. In the 
+future, tannin concentrations in wines should be measured so that their 
+relationship with wine quality ratings could be explored.
 
 # Dataset Source
 
-P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine 
+preferences by data mining from physicochemical properties. In Decision Support 
+Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
 
 Available at: http://dx.doi.org/10.1016/j.dss.2009.05.016
 

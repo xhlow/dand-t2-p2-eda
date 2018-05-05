@@ -356,7 +356,7 @@ sugar and alcohol levels.
 Other than that, I am also curious about whether alcohol level is residual 
 sugar level are correlated.
 
-### What other features in the dataset do you think will help support your 
+### What other features in the dataset do you think will help support your \
 investigation into your feature(s) of interest?
 
 According to online resources, acids probably influence the mouth feel of 
@@ -379,9 +379,9 @@ with free sulfur dioxide levels higher than 50 mg/dm^3^ are assigned the value
 ">50" and those lower than or equal to 50 mg/dm^3^ are assigned the value 
 "<=50".
 
-### Of the features you investigated, were there any unusual distributions? Did
-you perform any operations on the data to tidy, adjust, or change the form of 
-the data? If so, why did you do this?
+### Of the features you investigated, were there any unusual distributions? \
+Did you perform any operations on the data to tidy, adjust, or change the \
+form of the data? If so, why did you do this?
 
 The residual sugar data has a very long tail, so I log-transformed the data. 
 After doing so, the data appears bimodal.

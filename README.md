@@ -8,6 +8,20 @@ quality ratings. Through this EDA, I explored the variables, structure,
 patterns, oddities, and underlying relationships of the dataset to find out
 properties of the wines that are correlated to their quality ratings.
 
+## How to Run the Rmd File
+
+You can view and run the Rmd file using RStudio. One way to install RStudio is
+through Anaconda. After downloading the
+[Anaconda installer](https://www.anaconda.com/download/) and running it to
+install Anaconda, open Anaconda Navigator and click the "Install" button below
+RStudio. Once RStudio has been installed, click "Launch" to start using it.
+
+Alternatively, you can download and install the R programming language from
+[CRAN](http://cran.rstudio.com/), and subsequently download and install RStudio
+from [RStudio's website](http://www.rstudio.com/). If you choose this option,
+make sure you install the R programming language first before installing
+RStudio.
+
 ## Dataset
 
 The dataset used in this project contains information of 4,898 Portuguese

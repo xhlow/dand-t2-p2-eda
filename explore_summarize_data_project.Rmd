@@ -558,7 +558,7 @@ transformed.
 # Bivariate Analysis
 
 ### Talk about some of the relationships you observed in this part of the \
-investigation. How did the feature(s) of interest vary with other features in 
+investigation. How did the feature(s) of interest vary with other features in \
 the dataset?
 
 Among the variables investigated, only alcohol level seem to be somewhat 

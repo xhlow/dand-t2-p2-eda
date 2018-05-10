@@ -22,9 +22,12 @@ from [RStudio's website](http://www.rstudio.com/). If you choose this option,
 make sure you install the R programming language first before installing
 RStudio.
 
+## How to View the Analysis
+
 If you plan to only view the analysis and not the code written for the analysis,
-you can download the html file `explore_summarize_data.html`, which is knitted
-from the Rmd file, and open it using your web browser.
+you can look at the `explore_summarize_data_project.md` file, which is knitted
+from the Rmd file. Alternatively, you can download the html file
+`explore_summarize_data.html` and open it using your web browser.
 
 ## Dataset
 

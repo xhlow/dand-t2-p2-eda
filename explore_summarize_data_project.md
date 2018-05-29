@@ -322,8 +322,7 @@ sugar and alcohol levels.
 Other than that, I am also curious about whether alcohol level is residual
 sugar level are correlated.
 
-### What other features in the dataset do you think will help support your
-investigation into your feature(s) of interest?
+### What other features in the dataset do you think will help support your investigation into your feature(s) of interest?
 
 According to online resources, acids probably influence the mouth feel of
 wines, so the three acidity properties (fixed acidity, volatile acidity, and
@@ -345,9 +344,7 @@ with free sulfur dioxide levels higher than 50 mg/dm^3^ are assigned the value
 ">50" and those lower than or equal to 50 mg/dm^3^ are assigned the value
 "<=50".
 
-### Of the features you investigated, were there any unusual distributions?
-Did you perform any operations on the data to tidy, adjust, or change the
-form of the data? If so, why did you do this?
+### Of the features you investigated, were there any unusual distributions? Did you perform any operations on the data to tidy, adjust, or change the form of the data? If so, why did you do this?
 
 The residual sugar data has a very long tail, so I log-transformed the data.
 After doing so, the data appears bimodal.
@@ -480,9 +477,7 @@ transformed.
 
 # Bivariate Analysis
 
-### Talk about some of the relationships you observed in this part of the
-investigation. How did the feature(s) of interest vary with other features in
-the dataset?
+### Talk about some of the relationships you observed in this part of the investigation. How did the feature(s) of interest vary with other features in the dataset?
 
 Among the variables investigated, only alcohol level seem to be somewhat
 correlated to quality. There is a moderate positive correlation between alcohol
@@ -490,8 +485,7 @@ level and quality. Other than that, residual sugar, fixed acidity, volatile
 acidity, citric acid, pH, and free sulfur dioxide do not seem to be correlated
 to quality.
 
-### Did you observe any interesting relationships between the other features
-(not the main feature(s) of interest)?
+### Did you observe any interesting relationships between the other features (not the main feature(s) of interest)?
 
 There is a moderate negative correlation between residual sugar level and
 alcohol level. Wines with higher residual sugar levels tend to have lower
@@ -519,9 +513,7 @@ higher quality ratings still tend to have higher alcohol levels.
 
 # Multivariate Analysis
 
-### Talk about some of the relationships you observed in this part of the
-investigation. Were there features that strengthened each other in terms of 
-looking at your feature(s) of interest?
+### Talk about some of the relationships you observed in this part of the investigation. Were there features that strengthened each other in terms of looking at your feature(s) of interest?
 
 Regardless of whether free sulfur dioxide is greater than 50 mg/dm^3^ or not,
 wines with higher quality ratings still tend to have higher alcohol levels.
